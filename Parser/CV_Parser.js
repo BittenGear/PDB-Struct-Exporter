@@ -1,6 +1,11 @@
 
 import fs from 'fs'
+import path from 'path'
+import crypto from 'crypto'
+import url from 'url'
 import { execSync } from 'child_process'
+
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 
 import { assert, asUIntValid, aStrListNor, isset, textToLines,
 	mObj,
@@ -1225,7 +1230,7 @@ class LFParser {
 
 		fs.writeFileSync('./__tmp__input_dump_names.txt', list.map(l => l.name).join('\n'))
 		
-		execSync('"./bin/undname.exe" __tmp__input_dump_names.txt > __tmp__output_dump_names.txt')
+		execSync(`"${ path.join(__dirname, './bin/undname.exe') }" __tmp__input_dump_names.txt > __tmp__output_dump_names.txt`)
 		
 		const list2 = fs.readFileSync('__tmp__output_dump_names.txt', 'utf-8')
 			.split(/[\r\n]/)
