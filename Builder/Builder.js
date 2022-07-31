@@ -2856,7 +2856,7 @@ class Builder {
 ////////////////////////////////////////
 ////////////////////////////////////////
 
-function AstProcessing(astBuilder, logger) {
+function AstProcessing(astBuilder, logger, outDir) {
 	const lfProcList = astBuilder.procList
 
 	const InheritNodes     = [ TypeStruct, TypeClass ]
@@ -4643,12 +4643,12 @@ struct TSection {
 		all_PostProcessSingature,
 	)
 
-	accCodeFsBld.writeToFS('./ATF')
+	accCodeFsBld.writeToFS(outDir)
 
 }
 
-export function lf_AstProcessing(astBuilder, logger) {
-	AstProcessing( astBuilder, logger )
+export function lf_AstProcessing(astBuilder, logger, outDir) {
+	AstProcessing( astBuilder, logger, outDir )
 }
 
 export function lf_Build(pdb, logger) {	
