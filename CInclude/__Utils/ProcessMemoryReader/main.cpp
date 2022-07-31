@@ -16,7 +16,7 @@
 
 #define ATF_COMPILE_WITH_CHECK_ALL
 #define ATF_COMPILE_WITH_REFLECT_STRUCT_INFO
-#include "../../../ATF/Include.hpp"
+#include "../../Include.hpp"
 
 #include "ProcessMemoryReader_1_0_0.cpp"
 
