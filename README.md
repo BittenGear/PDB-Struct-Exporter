@@ -1,5 +1,5 @@
 # PDB-Struct-Exporter
-Fully automatic export of structures
+Fully automatic structure export
   > Only win, x64, old pdb
 - Requires
   - nodejs (ver > 18.x.x) 
