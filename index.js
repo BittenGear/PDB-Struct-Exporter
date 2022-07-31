@@ -68,7 +68,7 @@ if ( inPdbFile ) {
 	console.timeEnd("PDB Build")
 
 	console.time("PDB AST Processing")
-		lf_AstProcessing(builderAst, logger)
+		lf_AstProcessing(builderAst, logger, outDir)
 	console.timeEnd("PDB AST Processing")
 	
 }
