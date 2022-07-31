@@ -1,10 +1,15 @@
 
 import fs from 'fs'
+import path from 'path'
+import crypto from 'crypto'
+import url from 'url'
 import { execSync } from 'child_process'
+
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 
 import { assert } from './Helpers.js'
 
-const binFile    = './bin/undname.exe'
+const binFile    = path.join(__dirname, './bin/undname.exe')
 const inputFile  = './.undname-input.tmp'
 const outputFile = './.undname-output.tmp'
 const cacheFile  = './.undname.cache'
